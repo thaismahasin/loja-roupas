@@ -188,35 +188,36 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-      gap: 24px;
-    }
+	.nav {
+	  display: grid;
+	  grid-template-columns: auto 1fr auto;
+	  align-items: center;
+	  height: 80px;
+	  gap: 24px;
+	}
 
-    .nav-logo img {
+
+    .nav-logo img,
+    .header-logo {
       height: 75px;
       width: auto;
+      max-width: 240px;
+      object-fit: contain;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      list-style: none;
-    }
+	.nav-links {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  gap: 28px;
+	  list-style: none;
+	  min-width: 0;
+	}
 
-    .nav-links a {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      transition: color 0.2s;
-      position: relative;
-    }
+	.nav-links a {
+	  white-space: nowrap;
+	  line-height: 1;
+	}
 
     .nav-links a::after {
       content: '';
@@ -1267,11 +1268,16 @@
       margin-bottom: 32px;
     }
 
-    .footer-brand img {
-      height: 48px;
+    .footer-brand img,
+    .footer-logo {
+      width: 220px;
+      max-width: 100%;
+      height: auto;
       margin-bottom: 16px;
-      filter: brightness(0) invert(1);
-      opacity: 0.9;
+      filter: none;
+      opacity: 1;
+      display: block;
+      object-fit: contain;
     }
 
     .footer-brand p {
@@ -1447,7 +1453,7 @@
   <a href="#depoimentos" onclick="closeMobileMenu()">Depoimentos</a>
   <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
   <a href="#contato" onclick="closeMobileMenu()">Contato</a>
-  <a class="btn btn-wa" href="https://wa.me/5500000000000" target="_blank" rel="noopener">
+  <a class="btn btn-wa" href="#" data-wa-link target="_blank" rel="noopener">
     <span>Fale Conosco</span>
   </a>
 </nav>
@@ -1457,7 +1463,7 @@
   <div class="container">
     <nav class="nav">
       <a href="#" class="nav-logo">
-        <img src="assets/img/logo.png" alt="Thais Mahasin" />
+        <img src="assets/img/logo/logo.png" alt="Thais Mahasin" class="header-logo" />
       </a>
 
       <ul class="nav-links">
@@ -1473,7 +1479,7 @@
         <a class="btn btn-outline" href="#contato">
           <span>Orçamento</span>
         </a>
-        <a class="btn btn-gold" href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20atendimento." target="_blank" rel="noopener">
+        <a class="btn btn-gold" href="#" data-wa-link data-wa-text="Olá! Gostaria de atendimento." target="_blank" rel="noopener">
           <span>WhatsApp</span>
         </a>
       </div>
@@ -1512,7 +1518,7 @@
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-gold" href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20conhecer%20as%20peças." target="_blank" rel="noopener">
+              <a class="btn btn-gold" href="pronta-entrega.html">
                 <span>Ver Peças</span>
               </a>
               <a class="btn btn-outline" href="#sob-medida">
@@ -1535,22 +1541,22 @@
               </div>
             </div>
           </div>
+		<div class="hero-visual">
+		  <div class="hero-corner-deco"></div>
 
-          <div class="hero-visual">
-            <div class="hero-corner-deco"></div>
-            <div class="hero-visual-frame">
-              <div class="hero-placeholder">
-                <div class="hero-placeholder-inner">
-                  <span class="hero-placeholder-icon">✦</span>
-                  <p class="hero-placeholder-text">Adicione sua foto aqui</p>
-                </div>
-              </div>
-            </div>
-            <div class="hero-badge">
-              <p>Exclusivo</p>
-              <strong>Peças Autorais</strong>
-            </div>
-          </div>
+		  <div class="hero-visual-frame">
+			<img
+			  src="assets/img/hero/hero.png"
+			  alt="Moda feminina Thais Mahasin"
+			  class="hero-image"
+			>
+		  </div>
+
+		  <div class="hero-badge">
+			<p>Exclusivo</p>
+			<strong>Peças Autorais</strong>
+		  </div>
+		</div>
         </div>
       </div>
     </div>
@@ -1584,17 +1590,21 @@
   <section class="section about" id="sobre">
     <div class="container">
       <div class="about-inner">
-        <div class="about-image-wrap reveal">
-          <div class="about-image">
-            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;opacity:0.4;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dark);">
-              Adicione sua foto
-            </div>
-          </div>
-          <div class="about-image-deco"></div>
-          <div class="about-quote">
-            <p>"Moda é a armadura com que nos defendemos da realidade."</p>
-          </div>
-        </div>
+		<div class="about-image-wrap reveal">
+		  <div class="about-image">
+			<img
+			  src="assets/img/about.png"
+			  alt="Atelier Thais Mahasin"
+			  class="about-img"
+			>
+		  </div>
+
+		  <div class="about-image-deco"></div>
+
+		  <div class="about-quote">
+			<p>"Moda é a armadura com que nos defendemos da realidade."</p>
+		  </div>
+		</div>
 
         <div class="about-content">
           <span class="eyebrow reveal">Nossa História</span>
@@ -1633,7 +1643,7 @@
             </div>
           </div>
 
-          <a class="btn btn-gold" href="https://wa.me/5500000000000?text=Olá!%20Quero%20conhecer%20mais%20sobre%20a%20Thais%20Mahasin." target="_blank" rel="noopener">
+          <a class="btn btn-gold" href="#" data-wa-link data-wa-text="Olá! Quero conhecer mais sobre a Thais Mahasin." target="_blank" rel="noopener">
             <span>Fale Conosco</span>
           </a>
         </div>
@@ -1656,7 +1666,7 @@
           <div class="service-icon">👗</div>
           <h3>Pronta Entrega</h3>
           <p>Coleção de peças exclusivas disponíveis para compra imediata. Cada item selecionado com cuidado para oferecer qualidade, estilo e elegância sem espera.</p>
-          <a class="service-link" href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20ver%20as%20peças%20disponíveis." target="_blank" rel="noopener">
+          <a class="service-link" href="pronta-entrega.html">
             Ver Peças →
           </a>
         </div>
@@ -1676,7 +1686,7 @@
           <div class="service-icon">✨</div>
           <h3>Eventos Especiais</h3>
           <p>Looks únicos para casamentos, formaturas, festas e ocasiões especiais. Seu momento merece uma peça à altura — criada exclusivamente para você.</p>
-          <a class="service-link" href="https://wa.me/5500000000000?text=Olá!%20Preciso%20de%20uma%20peça%20para%20um%20evento%20especial." target="_blank" rel="noopener">
+          <a class="service-link" href="#" data-wa-link data-wa-text="Olá! Preciso de uma peça para um evento especial." target="_blank" rel="noopener">
             Consultar →
           </a>
         </div>
@@ -1722,7 +1732,7 @@
           </div>
 
           <div style="margin-top:32px">
-            <a class="btn btn-wa" href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20fazer%20uma%20peça%20sob%20medida." target="_blank" rel="noopener">
+            <a class="btn btn-wa" href="#" data-wa-link data-wa-text="Olá! Gostaria de fazer uma peça sob medida." target="_blank" rel="noopener">
               <span>Solicitar Peça</span>
             </a>
           </div>
@@ -1920,7 +1930,7 @@
       <h2>Transforme seu estilo com<br/>peças feitas para você</h2>
       <p>Entre em contato e descubra como podemos criar algo especial juntas.</p>
       <div class="cta-actions">
-        <a class="btn btn-gold" href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20atendimento." target="_blank" rel="noopener">
+        <a class="btn btn-gold" href="#" data-wa-link data-wa-text="Olá! Gostaria de atendimento." target="_blank" rel="noopener">
           <span>Iniciar pelo WhatsApp</span>
         </a>
         <a class="btn btn-outline" href="#contato" style="color:#fff;border-color:rgba(255,255,255,0.2)">
@@ -1940,25 +1950,25 @@
           <p class="section-sub reveal reveal-delay-2">Estamos aqui para transformar sua ideia em uma peça incrível. Entre em contato pelo canal de sua preferência.</p>
 
           <div class="contact-channels">
-            <a class="channel reveal" href="https://wa.me/5500000000000" target="_blank" rel="noopener">
+            <a class="channel reveal" href="#" data-wa-link target="_blank" rel="noopener">
               <div class="channel-icon">📱</div>
               <div>
                 <p class="channel-label">WhatsApp</p>
-                <p class="channel-val">(00) 00000-0000</p>
+                <p class="channel-val" data-wa-display>(21) 99631-3804</p>
               </div>
             </a>
-            <a class="channel reveal reveal-delay-1" href="mailto:contato@thaismahasin.com.br">
+            <a class="channel reveal reveal-delay-1" href="#" data-email-link>
               <div class="channel-icon">✉</div>
               <div>
                 <p class="channel-label">E-mail</p>
-                <p class="channel-val">contato@thaismahasin.com.br</p>
+                <p class="channel-val" data-email-display>contato@thaismahasin.com.br</p>
               </div>
             </a>
-            <a class="channel reveal reveal-delay-2" href="https://instagram.com/thaismahasin" target="_blank" rel="noopener">
+            <a class="channel reveal reveal-delay-2" href="#" data-instagram-link target="_blank" rel="noopener">
               <div class="channel-icon">◎</div>
               <div>
                 <p class="channel-label">Instagram</p>
-                <p class="channel-val">@thaismahasin</p>
+                <p class="channel-val" data-instagram-display>@thais_mahasin</p>
               </div>
             </a>
             <div class="channel reveal reveal-delay-3">
@@ -2018,9 +2028,6 @@
             <span>Enviar Solicitação</span>
           </button>
 
-          <p class="form-note">
-            💡 Para envio real, conecte este formulário ao Formspree ou Netlify Forms.
-          </p>
         </div>
       </div>
     </div>
@@ -2030,7 +2037,7 @@
 
 <!-- FLOATING WA -->
 <div class="floating-wa">
-  <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20atendimento." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a href="#" data-wa-link data-wa-text="Olá! Quero atendimento." target="_blank" rel="noopener" aria-label="WhatsApp">
     💬
   </a>
 </div>
@@ -2040,7 +2047,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="Thais Mahasin" />
+        <img src="assets/img/logo/logo_footer.png" alt="Thais Mahasin" class="footer-logo" />
         <p>Moda feminina exclusiva com peças prontas e sob medida. Elegância, qualidade e atendimento verdadeiramente personalizado.</p>
       </div>
 
@@ -2058,21 +2065,61 @@
       <div class="footer-col">
         <h4>Contato</h4>
         <ul>
-          <li><a href="https://wa.me/5500000000000" target="_blank">(00) 00000-0000</a></li>
-          <li><a href="mailto:contato@thaismahasin.com.br">contato@thaismahasin.com.br</a></li>
-          <li><a href="https://instagram.com/thaismahasin" target="_blank">@thaismahasin</a></li>
+          <li><a href="#" data-wa-link data-wa-display target="_blank">(21) 99631-3804</a></li>
+          <li><a href="#" data-email-link data-email-display>contato@thaismahasin.com.br</a></li>
+          <li><a href="#" data-instagram-link data-instagram-display target="_blank">@thais_mahasin</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>© 2025 Thais Mahasin. Todos os direitos reservados.</p>
+      <p>© 2026 Thais Mahasin. Todos os direitos reservados.</p>
       <p>Feito com <span style="color:var(--gold-light)">♥</span> para mulheres únicas</p>
     </div>
   </div>
 </footer>
 
 <script>
+  const CONTACT = {
+    whatsappNumber: '5521996313804',
+    whatsappDisplay: '(21) 99631-3804',
+    email: 'estilistamahasin23@gmail.com',
+    instagramHandle: 'thais_mahasin',
+    instagramDisplay: '@thais_mahasin'
+  };
+
+  function buildWhatsAppUrl(message = '') {
+    return `https://wa.me/${CONTACT.whatsappNumber}${message ? `?text=${encodeURIComponent(message)}` : ''}`;
+  }
+
+  function applyContactInfo() {
+    document.querySelectorAll('[data-wa-link]').forEach(el => {
+      el.href = buildWhatsAppUrl(el.dataset.waText || '');
+    });
+
+    document.querySelectorAll('[data-wa-display]').forEach(el => {
+      el.textContent = CONTACT.whatsappDisplay;
+    });
+
+    document.querySelectorAll('[data-email-link]').forEach(el => {
+      el.href = `mailto:${CONTACT.email}`;
+    });
+
+    document.querySelectorAll('[data-email-display]').forEach(el => {
+      el.textContent = CONTACT.email;
+    });
+
+    document.querySelectorAll('[data-instagram-link]').forEach(el => {
+      el.href = `https://instagram.com/${CONTACT.instagramHandle}`;
+    });
+
+    document.querySelectorAll('[data-instagram-display]').forEach(el => {
+      el.textContent = CONTACT.instagramDisplay;
+    });
+  }
+
+  applyContactInfo();
+
   /* ── NAVBAR scroll ── */
   const topbar = document.getElementById('topbar');
   window.addEventListener('scroll', () => {
@@ -2102,10 +2149,31 @@
 
   /* ── Form ── */
   function handleForm() {
-    const nome = document.getElementById('nome').value;
-    if (!nome.trim()) { alert('Por favor, informe seu nome.'); return; }
-    const msg = encodeURIComponent(`Olá! Me chamo ${nome} e gostaria de mais informações sobre uma peça.`);
-    window.open(`https://wa.me/5500000000000?text=${msg}`, '_blank');
+    const nome = document.getElementById('nome').value.trim();
+    const whatsapp = document.getElementById('whatsapp').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const tipo = document.getElementById('tipo').value.trim();
+    const peca = document.getElementById('peca').value.trim();
+    const detalhes = document.getElementById('msg').value.trim();
+
+    if (!nome) {
+      alert('Por favor, informe seu nome.');
+      return;
+    }
+
+    const linhas = [
+      'Olá! Vim pelo formulário do site e gostaria de solicitar um orçamento.',
+      '',
+      `Nome: ${nome}`
+    ];
+
+    if (whatsapp) linhas.push(`WhatsApp: ${whatsapp}`);
+    if (email) linhas.push(`E-mail: ${email}`);
+    if (tipo) linhas.push(`Tipo de solicitação: ${tipo}`);
+    if (peca) linhas.push(`Peça desejada / referência: ${peca}`);
+    if (detalhes) linhas.push(`Detalhes do pedido: ${detalhes}`);
+
+    window.open(buildWhatsAppUrl(linhas.join('\n')), '_blank');
   }
 
   /* ── Stagger hero reveal ── */
