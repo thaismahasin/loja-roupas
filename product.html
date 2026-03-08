@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto | Thais Mahasin</title>
+  <meta name="description" content="Página de detalhe do produto com imagens, vídeo, informações e consulta via WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/shop.css" />
+</head>
+<body>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+  <a href="index.html#sobre" onclick="closeMobileMenu()">Sobre</a>
+  <a href="pronta-entrega.html" onclick="closeMobileMenu()">Pronta Entrega</a>
+  <a href="index.html#servicos" onclick="closeMobileMenu()">Serviços</a>
+  <a href="index.html#sob-medida" onclick="closeMobileMenu()">Sob Medida</a>
+  <a href="index.html#depoimentos" onclick="closeMobileMenu()">Depoimentos</a>
+  <a href="index.html#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="index.html#contato" onclick="closeMobileMenu()">Contato</a>
+  <a class="btn btn-wa" href="#" data-wa-link data-wa-text="Olá! Gostaria de atendimento." target="_blank" rel="noopener">
+    <span>Fale Conosco</span>
+  </a>
+</nav>
+
+<header class="topbar" id="topbar">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/logo/logo.png" alt="Thais Mahasin" class="header-logo" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="pronta-entrega.html">Pronta Entrega</a></li>
+        <li><a href="index.html#sob-medida">Sob Medida</a></li>
+        <li><a href="index.html#depoimentos">Depoimentos</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="index.html#contato"><span>Orçamento</span></a>
+        <a class="btn btn-gold" href="#" data-wa-link data-wa-text="Olá! Gostaria de atendimento." target="_blank" rel="noopener">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <button class="hamburger" onclick="openMobileMenu()" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Detalhes da peça</span>
+        <h1 class="section-title" id="productHeroName">Produto</h1>
+        <p class="section-sub" id="productHeroDescription">Uma leitura mais completa da peça, com destaque para modelagem, materiais, presença visual e possibilidades de uso.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong id="productHeroPrice">Sob consulta</strong>
+            <span>Valor da peça</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Galeria completa</strong>
+            <span>Editorial e ateliê</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Consulta rápida</strong>
+            <span>Atendimento direcionado</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <p class="product-intro">Nesta página, a peça ganha protagonismo. A proposta é permitir que a cliente observe acabamento, cor, volumes, drapeados, estrutura e movimento com mais clareza antes de entrar em contato.</p>
+        <p class="catalog-lead">Use a galeria para navegar entre imagens e vídeo. Ao final, outras peças do catálogo ajudam a continuar a visita de forma natural.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-page">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> / <a href="pronta-entrega.html">Pronta entrega</a> / <span id="productNameBreadcrumb">Produto</span>
+      </div>
+      <div class="product-layout" id="productContent"></div>
+
+      <section class="related">
+        <h3>Outras peças do catálogo</h3>
+        <div class="related-grid" id="relatedProducts"></div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+    <img id="lightboxImg" alt="Imagem ampliada do produto" />
+    <button class="lightbox-next" id="lightboxNext" aria-label="Próxima">›</button>
+  </div>
+</div>
+
+<div class="floating-wa">
+  <a href="#" data-wa-link data-wa-text="Olá! Quero atendimento." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo/logo_footer.png" alt="Thais Mahasin" class="footer-logo" />
+        <p>Moda feminina exclusiva com peças prontas e sob medida. Elegância, qualidade e atendimento verdadeiramente personalizado.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="pronta-entrega.html">Pronta Entrega</a></li>
+          <li><a href="index.html#sob-medida">Sob Medida</a></li>
+          <li><a href="index.html#depoimentos">Depoimentos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#" data-wa-link data-wa-display target="_blank">(21) 99631-3804</a></li>
+          <li><a href="#" data-email-link data-email-display>contato@thaismahasin.com.br</a></li>
+          <li><a href="#" data-instagram-link data-instagram-display target="_blank">@thais_mahasin</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Thais Mahasin. Todos os direitos reservados.</p>
+      <p>Feito com <span style="color:var(--gold-light)">♥</span> para mulheres únicas</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/product.js"></script>
+</body>
+</html>
